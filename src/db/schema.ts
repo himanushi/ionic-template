@@ -5,6 +5,7 @@ export const users = mysqlTable(
   {
     id: bigint("id", { mode: "number" }).primaryKey().autoincrement(),
     fullName: varchar("full_name", { length: 256 }),
+    name: varchar("full_name", { length: 256 }),
   },
   (users) => ({
     nameIdx: index("name_idx").on(users.fullName),
